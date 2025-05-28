@@ -1,0 +1,28 @@
+[package]
+name = "cp"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+embedded-hal = "0.2.7"
+nb = "1.1" # Non-blocking I/O layer
+cortex-m-rt = "0.7.5"
+panic-halt = "0.2" # Panic behaviour, see https://crates.io/keywords/panic-impl for alternatives
+defmt = "0.3.10" # Serial
+embedded-alloc = "0.5.1" # Heap
+defmt-rtt = "0.4.1" # Serial RTT
+smart-leds = "0.4.0" # "FastLED"
+hd44780-driver = "0.4.0"
+
+[dependencies.cortex-m]
+version = "0.7"
+features = ["critical-section-single-core"]
+
+[dependencies.stm32f4xx-hal]
+version = "0.20.0"
+features = ["stm32f411"] # replace the model of your microcontroller here
+                         # and add other required features
+
+[dependencies.ws2812-spi]
+version = "0.5.0"
+features = ["mosi_idle_high"]
