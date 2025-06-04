@@ -1,3 +1,4 @@
+/* */
 use stm32f4xx_hal::{
     adc, gpio::{EPin, Input}, pac
 };
